@@ -1,0 +1,40 @@
+{
+   "manifest_version": 2,
+   "name": "Tamildhool Toolbar",
+   "version": "1.1",
+   "description": "Tamildhool topbar injector for Chrome. 1. Inject Topbar . ",
+   "permissions": [ "activeTab" ],
+   "content_scripts": [
+      {
+      "run_at": "document_idle",
+      "all_frames": true,
+      "css": [ "styles-and-overrides.css"],
+      "js": ["jquery.js", "env-settings.js", "common.js", "tamildhool.js"],
+      "matches": [ "https://*.tamildhool.com/*" ]
+      },
+      {
+         "run_at": "document_idle",
+         "all_frames": true,
+         "css": [ "styles-and-overrides.css"],
+         "js": ["jquery.js", "env-settings.js", "common.js", "localhost.js"],
+         "matches": [ "http://localhost/*" ]
+      },
+      {
+         "run_at": "document_idle",
+         "all_frames": true,
+         "css": [ "styles-and-overrides.css"],
+         "js": ["jquery.js", "env-settings.js", "common.js", "others.js"],
+         "matches": ["https://*.libertymutual.com/*", "https://*.paylocity.com/*", "https://*.carfax.com/*", "*://*.naenwan.com/*", "*://*.carsaverdealers.com/*"]
+      },
+      {
+         "run_at": "document_idle",
+         "all_frames": true,
+         "js": ["env-settings.js", "disable-links.js"],
+         "matches": ["https://*.libertymutual.com/*", "https://*.carfax.com/*", "*://*.carsaverdealers.com/*"]
+      }
+
+   ],
+   "web_accessible_resources": [
+      "images/*"
+   ]
+}
