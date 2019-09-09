@@ -35,12 +35,12 @@ function removeElements () {
     $(".entry-cover").remove();
     $("#rc-row-container").remove();
     $(".tamil-before-content").remove();
-    $(".navbar-brand-wpz, .header_social, .entry-header .tamil-in-between-feed").remove();
+    $(".navbar-brand-wpz, .header_social, .entry-header, .tamil-in-between-feed").remove();
 
     console.log( $(".entry-content div iframe[src*='http://www.tamilray.space/']").parent() );
     $(".entry-content div iframe[src*='http://www.tamilray.space/']").parent().siblings().remove();
     $(".entry-content" ).css({left:'10px', width: '1200px', hight: '1080px'})
-    $(".entry-content p").remove();
+    // $(".entry-content p").remove();
     var d = $("div iframe[src*='http://www.tamilray.space/'] > div ");
     $(".inner-wrap, .content-area").css({'max-width': '100%'});
     $(".entry-content").css( {width: '80%'});
